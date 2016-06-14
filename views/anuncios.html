@@ -8,7 +8,7 @@
             <p class="lead">Shop Name</p>
             <div class="list-group">
                 <label for="filtroAnuncios" class="list-group-item">Busca si eso</label>
-                <input id="filtroAnuncios" type="text" placeholder="Ej. Tortilla" class="list-group-item">
+                <input id="filtroAnuncios" type="text" placeholder="Ej. Tortilla" class="list-group-item" ng-model="productFilter">
             </div>
         </div>
 
@@ -16,23 +16,19 @@
 
         <div class="row">
 
-            <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="product in $ctrl.products | filter: productFilter">
                 <div class="thumbnail">
-                    <img src="http://placehold.it/320x150" alt="">
+                    <img ng-src="{{$ctrl.absolutePath(product.photos)}}" alt="">
                     <div class="caption">
-                        <h4 class="pull-right">$24.99</h4>
-                        <h4><a href="#">First Product</a>
+                        <h4><a href="#">{{product.name}}</a>
                         </h4>
-                        <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                        <h4>{{product.price}}€</h4>
+                        <p class="textoDeMas" ng-bind-html="product.description | sanitize"></p>
                     </div>
                     <div class="ratings">
-                        <p class="pull-right">15 reviews</p>
+                        <p class="pull-right">{{product.state}}</p>
                         <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
+                           {{product.category.name}}
                         </p>
                     </div>
                 </div>

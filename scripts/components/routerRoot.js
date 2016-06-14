@@ -13,6 +13,15 @@ angular.module("whatapop").component("routerRoot", {
             path: "/new",
             component: "nuevoAnuncio"   
             
+        },
+
+        {
+         name: "LoginForm",
+            path: "login",
+            component: "loginForm"
+
+
+
         }
         
         
