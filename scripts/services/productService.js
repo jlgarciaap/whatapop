@@ -8,6 +8,20 @@ angular.module("whatapop").service("ProductService", function ($http, Properties
         return $http.get(Properties.serverUrl+Properties.endpointProducts);
     };
 
+    this.getProducts = function (productId) {
+
+        if(productId) {
+
+            return $http.get(Properties.serverUrl + Properties.endpointProducts + "/" + productId);
+        } else {
+
+            return $http.get(Properties.serverUrl+Properties.endpointProducts);
+
+        }
+    };
+
+
+
     this.photoAbsolutePath = function (relativePath) {
 
         //Este es el metodo corto de hacer uun if, es decir si existe rutaRelativa hacemos

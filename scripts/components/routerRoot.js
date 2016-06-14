@@ -4,7 +4,8 @@ angular.module("whatapop").component("routerRoot", {
         {
             name: "Anuncios",
             path: "/anuncios",
-            component: "anuncios"
+            component: "anuncios",
+            useAsDefault: true
             
         },
         
@@ -19,9 +20,14 @@ angular.module("whatapop").component("routerRoot", {
          name: "LoginForm",
             path: "login",
             component: "loginForm"
-
-
-
+            
+        },
+        {
+            name: "ItemDetails",
+            path: "/anuncios/:id",
+            component: "itemDetails"
+            
+            
         }
         
         

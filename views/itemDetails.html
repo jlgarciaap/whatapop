@@ -4,7 +4,7 @@
     <div class="row">
 
         <div class="col-sm-4 col-lg-4 col-md-4">
-            <image-picker/>
+            <img ng-src="{{$ctrl.absolutePathItem($ctrl.product.photos)}}">
         </div>
 
     </div>
@@ -12,13 +12,13 @@
     <div class="row">
 
         <div class="col-md-3">
-            <p class="lead">Nombre Articulo</p>
+            <p class="lead">{{$ctrl.product.name}}</p>
             <div class="list-group">
                 <label class="list-group-item">Precio</label>
-                <p>Aqui pondriamos el precio</p>
+                <p>{{$ctrl.product.price}}€</p>
 
                 <label class="list-group-item">Detalles</label>
-                <p>Y aqui detalles del articulo</p>
+                <p ng-bind-html="$ctrl.product.description | sanitize"></p>
             </div>
         </div>
 
