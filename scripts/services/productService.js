@@ -20,7 +20,11 @@ angular.module("whatapop").service("ProductService", function ($http, Properties
         }
     };
 
+    this.getProductsCategory = function () {
 
+        return $http.get(Properties.serverUrl+Properties.endpointProducts);
+    };
+    
 
     this.photoAbsolutePath = function (relativePath) {
 

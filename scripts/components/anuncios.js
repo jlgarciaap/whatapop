@@ -19,10 +19,11 @@ angular.module("whatapop").component("anuncios",{
 
                 //En la respuesta viene mucha informacion pero nos interesa el data nada mas
                 self.products = respuesta.data;
-                
-                
 
+                
             });
+
+
 
         };
 

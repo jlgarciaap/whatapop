@@ -25,8 +25,8 @@ angular.module("whatapop").component("itemDetails",{
 
             self.absolutePathItem = ProductService.photoAbsolutePath;
             
-            
         };
+        
         
     }
 

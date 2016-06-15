@@ -1,22 +1,31 @@
 
 <!-- Page Content -->
-<div class="container">
+<div class="container-fluid">
 
-    <div class="row">
-
-        <div class="col-md-3">
-            <p class="lead">Shop Name</p>
-            <div class="list-group">
-                <label for="filtroAnuncios" class="list-group-item">Busca si eso</label>
-                <input id="filtroAnuncios" type="text" placeholder="Ej. Tortilla" class="list-group-item" ng-model="productFilter">
+    <div>
+        <form>
+        <!--<div class="col-md-3">-->
+            <!--<div class="list-group">-->
+            <div class="list-group"></div>
+                <label for="filtroAnuncios" class="list-group-item active">Busca si eso</label>
+                <input id="filtroAnuncios" type="text" placeholder="Ej. Call of Duty" class="form-control" ng-model="productFilter.name">
+                <table class="table">
+                    <div class="checkbox">
+                <th><label><input class="radio-inline" type="radio" name="categorias" ng-model="categoria.category.id" value="1">Videojuegos</label></th>
+                <th><input  class="radio-inline" type="radio" name="categorias" ng-model="categoria.category.id" value="2">Peliculas</th>
+                <th><input class="" type="radio" name="categorias" ng-model="categoria.category.id" value="3">Libros</th>
+                <th><input class="" type="radio" name="categorias" ng-model="categoria.category.id"> Todas</th>
+                        </div>
+                    </table>
             </div>
         </div>
+            </form>
 
 
 
-        <div class="row">
+        <div>
 
-            <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="product in $ctrl.products | filter: productFilter">
+            <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="product in $ctrl.products | filter: productFilter | filter: categoria">
                 <div class="thumbnail">
                     <img ng-src="{{$ctrl.absolutePath(product.photos)}}" alt="">
                     <div class="caption">
