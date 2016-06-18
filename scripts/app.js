@@ -1,3 +1,5 @@
+"use strict";
+
 //Setter de la app
 //Inject de NGComponentRouter obligatorio para las comunicaciones
 angular.module("whatapop", ["ngComponentRouter","dahr.ng-image-picker"]);

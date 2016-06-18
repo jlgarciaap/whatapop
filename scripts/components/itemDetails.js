@@ -16,11 +16,11 @@ angular.module("whatapop").component("itemDetails",{
             var product = infoDesdeVistaAnuncios.params.id;
             
             ProductService.getProducts(product).then(function (respuesta) {
-               
+
                 //publicamos hacia la vista la info
                 self.product = respuesta.data;
-                
-                
+
+
             });
 
             self.absolutePathItem = ProductService.photoAbsolutePath;

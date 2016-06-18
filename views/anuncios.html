@@ -1,60 +1,45 @@
-
-<!-- Page Content -->
 <div class="container-fluid">
-
     <div>
-        <form>
         <!--<div class="col-md-3">-->
             <!--<div class="list-group">-->
-            <div class="list-group"></div>
+            <div class="list-group">
                 <label for="filtroAnuncios" class="list-group-item active">Busca si eso</label>
-                <input id="filtroAnuncios" type="text" placeholder="Ej. Call of Duty" class="form-control" ng-model="productFilter.name">
-                <table class="table">
-                    <div class="checkbox">
-                <th><label><input class="radio-inline" type="radio" name="categorias" ng-model="categoria.category.id" value="1">Videojuegos</label></th>
-                <th><input  class="radio-inline" type="radio" name="categorias" ng-model="categoria.category.id" value="2">Peliculas</th>
-                <th><input class="" type="radio" name="categorias" ng-model="categoria.category.id" value="3">Libros</th>
-                <th><input class="" type="radio" name="categorias" ng-model="categoria.category.id"> Todas</th>
-                        </div>
-                    </table>
+                <input style="padding: 20px" id="filtroAnuncios" type="text" placeholder="Ej. Call of Duty" class="form-control" ng-model="productFilter.name">
+                <div style="text-align: center">
+                    <label class="radio-inline">
+                        <input type="radio" name="categorias" ng-model="categoria.category.name" value="Videojuegos">Videojuegos</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="categorias" ng-model="categoria.category.name" value="Películas">Peliculas</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="categorias" ng-model="categoria.category.name" value="Libros">Libros</label>
+                    <label class="radio-inline">
+                        <input type="radio" name="categorias" ng-model="categoria.category.name" value="">Todos</label>
+                </div>
             </div>
-        </div>
-            </form>
+    </div>
+</div>
 
 
 
-        <div>
+<!--comentarios col-sm-4 col-lg-4 col-md-4-->
 
             <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="product in $ctrl.products | filter: productFilter | filter: categoria">
-                <div class="thumbnail">
-                    <img ng-src="{{$ctrl.absolutePath(product.photos)}}" alt="">
+                <div class="thumbnail" ng-link="['ItemDetails',{id: product.id}]">
+                    <img  ng-link="['ItemDetails',{id: product.id}]" ng-src={{$ctrl.absolutePath(product.photos)}} alt="">
                     <div class="caption">
                         <!--<h4><a >{{product.name}}</a>-->
-                            <h4><a ng-link="['ItemDetails',{id: product.id}]">{{product.name}}</a>
+                            <h4><a ng-link="['ItemDetails',{id: product.id}]">{{product.name}}</a></h4>
                             <!-- COn este ng-link llamamos al router del router al componente y le pasamos parametros de ruta con ese JSON-->
-                        </h4>
+
                         <h4>{{product.price}}€</h4>
                         <p class="textoDeMas" ng-bind-html="product.description | sanitize"></p>
                     </div>
                     <div class="ratings">
                         <p class="pull-right">{{product.state}}</p>
-                        <p>
+                        <p>Alta: {{$ctrl.dateLocale(product.published_date) | date: "d/M/yy"}}</p>
                            {{product.category.name}}
                         </p>
                     </div>
                 </div>
             </div>
-
-            <div class="col-sm-4 col-lg-4 col-md-4">
-                <h4><a href="#">Like this template?</a>
-                </h4>
-                <p>If you like this template, then check out <a target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this tutorial</a> on how to build a working review system for your online store!</p>
-                <a class="btn btn-primary" target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">View Tutorial</a>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
 

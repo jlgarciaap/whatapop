@@ -1,25 +1,29 @@
 "use strict";
 
-angular.module("whatapop").service("newFormProduct", function () {
+angular.module("whatapop").directive("newFormProduct", ["CategoryService" ,function () {
    return{
 
        restrict: "EA", //Como element y Atributo
        templateUrl: "views/newFormProduct.html",
 
        scope: {
-           clickToAccept: "&" //Con esto es comunicacion hacia afuera o notificacion
+          clickToAccept:  "&" //Con esto es comunicacion hacia afuera o notificacion
        },
        link: function (scope) { //Establecemos la logica con los datos que se le pasan a la directiva
 
+            var fecha= new Date();
            //creamos objeto anuncio
            scope.anuncio= {
 
              name: "",
              description: "",
-               category:{},
+               category:{
+                   id:"",
+                   name: ""
+               },
                seller: {},
-               published_date: "",
-               state: "",
+               published_date: fecha.getTime(),
+               state: "selling",
                price: "",
                photos: []
 
@@ -38,4 +42,4 @@ angular.module("whatapop").service("newFormProduct", function () {
    };
 
 
-});
+}]);

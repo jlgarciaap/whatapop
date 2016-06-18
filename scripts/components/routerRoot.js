@@ -1,3 +1,5 @@
+"use strict";
+
 angular.module("whatapop").component("routerRoot", {
    
     $routeConfig: [

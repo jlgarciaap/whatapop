@@ -17,17 +17,21 @@ angular.module("whatapop").component("anuncios",{
             //respuesta el navegador
             ProductService.getProducts().then(function (respuesta) {
 
-                //En la respuesta viene mucha informacion pero nos interesa el data nada mas
-                self.products = respuesta.data;
 
-                
+                    //En la respuesta viene mucha informacion pero nos interesa el data nada mas
+                    self.products = respuesta.data;
+
+
+
             });
 
 
 
         };
 
-        self.absolutePath = ProductService.photoAbsolutePath;
+       self.absolutePath = ProductService.photoAbsolutePath;
+        
+        self.dateLocale = ProductService.getDateLocale;
 
     }  
 

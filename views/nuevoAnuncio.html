@@ -1,9 +1,17 @@
-<new-form-product></new-form-product>
+<div class="container">
 
-    <div class="col-sm-4 col-lg-4 col-md-4">
-        <image-picker></image-picker>
+
+    <new-form-product  click-to-accept="$ctrl.saveProduct(anuncio)"></new-form-product>
+
+
+
+    <div class="col-sm-4 col-lg-4 col-md-4" style="position: relative;">
+        <p class="lead">Imagen</p>
+        <image-picker image-selected="$ctrl.imageSelected(imageFile)"
+        image-deselected="$ctrl.imageError()"></image-picker>
     </div>
 
+</div>
 
 
 

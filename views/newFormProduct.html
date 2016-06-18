@@ -1,33 +1,30 @@
 
-
-<!-- Page Content -->
-
-<div class="container">
-
     <div class="row">
-
-        <div class="col-md-3">
+        <div class="">
             <p class="lead">Nuevo Articulo</p>
-            <div class="list-group">
-                <label for="nombreArticulo" class="list-group-item">Nombre del Articulo</label>
-                <input id="nombreArticulo" type="text" placeholder="Ej. Macbook Pro" class="list-group-item">
-
-                <label for="descripcionArticulo" class="list-group-item">Descripcion</label>
-                <input id="descripcionArticulo" type="text" placeholder="Ej. Descripcion" class="list-group-item">
-
-                <label for="tipoArticulo" class="list-group-item">Categoria</label>
-                <input id="tipoArticulo" type="text" placeholder="Ej. Tecnologia" class="list-group-item">
-
-                <label for="precioArticulo" class="list-group-item">Precio</label>
-                <input id="precioArticulo" type="number" min="1" max="99999" placeholder="Ej. 50" class="list-group-item">
+            <div class="input-group" style="padding: 20px">
+                <span class="input-group-addon" id="basic-addon1">Nombre del Articulo</span>
+                <input type="text" class="form-control" style="padding: 15px;" placeholder="Ej. Call of duty" aria-describedby="basic-addon1"
+                       ng-model="anuncio.name" required>
             </div>
-            <div>
-                <button>Aceptar</button>
-
+            <div class="input-group" style="padding: 20px">
+                <span class="input-group-addon" id="basic-addon2">Decripcion</span>
+                <textarea type="text" class="form-control" rows="3" style="padding: 15px;"placeholder="Ej. SuperJuego" aria-describedby="basic-addon2" ng-model="anuncio.description"></textarea>
             </div>
+            <div class="input-group" style="padding: 20px">
+                <span class="input-group-addon" id="basic-addon3">Caregoria</span>
+                <select ng-model="anuncio.category.name" required>
+                    <option>Videojuegos</option>
+                    <option>Películas</option>
+                    <option>Libros</option>
+                </select>
+            </div>
+            <div class="input-group" style="padding: 20px">
+                <span class="input-group-addon" id="basic-addon4">Precio</span>
+                <input type="number" class="form-control" style="padding: 15px;" placeholder="0" aria-describedby="basic-addon4" ng-model="anuncio.price" required∫>
+            </div>
+            <button ng-click="notifyNewProduct()">Aceptar</button>
+
         </div>
-
-
     </div>
 
-</div>
