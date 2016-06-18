@@ -1,15 +1,15 @@
 <div class="container">
+    <h2>Nuevo Anuncio</h2>
+    <div class="col-sm-4 col-lg-4 col-md-4" style="position: relative;">
+        <p class="lead">Imagen</p>
+        <image-picker image-selected="$ctrl.imageSelected(imageFile)"
+                      image-deselected="$ctrl.imageError()"></image-picker>
+    </div>
 
 
     <new-form-product  click-to-accept="$ctrl.saveProduct(anuncio)"></new-form-product>
 
 
-
-    <div class="col-sm-4 col-lg-4 col-md-4" style="position: relative;">
-        <p class="lead">Imagen</p>
-        <image-picker image-selected="$ctrl.imageSelected(imageFile)"
-        image-deselected="$ctrl.imageError()"></image-picker>
-    </div>
 
 </div>
 

@@ -1,27 +1,8 @@
 <div class="container-fluid">
     <div>
-        <!--<div class="col-md-3">-->
-            <!--<div class="list-group">-->
-            <div class="list-group">
-                <label for="filtroAnuncios" class="list-group-item active">Busca si eso</label>
-                <input style="padding: 20px" id="filtroAnuncios" type="text" placeholder="Ej. Call of Duty" class="form-control" ng-model="productFilter.name">
-                <div style="text-align: center">
-                    <label class="radio-inline">
-                        <input type="radio" name="categorias" ng-model="categoria.category.name" value="Videojuegos">Videojuegos</label>
-                    <label class="radio-inline">
-                        <input type="radio" name="categorias" ng-model="categoria.category.name" value="Películas">Peliculas</label>
-                    <label class="radio-inline">
-                        <input type="radio" name="categorias" ng-model="categoria.category.name" value="Libros">Libros</label>
-                    <label class="radio-inline">
-                        <input type="radio" name="categorias" ng-model="categoria.category.name" value="">Todos</label>
-                </div>
-            </div>
+        <filter-directive></filter-directive>
     </div>
-</div>
 
-
-
-<!--comentarios col-sm-4 col-lg-4 col-md-4-->
 
             <div class="col-sm-4 col-lg-4 col-md-4" ng-repeat="product in $ctrl.products | filter: productFilter | filter: categoria">
                 <div class="thumbnail" ng-link="['ItemDetails',{id: product.id}]">
@@ -43,3 +24,4 @@
                 </div>
             </div>
 
+</div>
