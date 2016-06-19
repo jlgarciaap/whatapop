@@ -6,8 +6,9 @@ var dependencies = {
 
     controller: function (ProductService) {
 
+        //Pasamos ProductService para poder usar sus metodos
         var self= this;
-
+        
         self.$routerOnActivate = function (infoFromProductsView) {
             //Con el HOOk $routerOnActivate cada vez que se llama recibimos un monton de info, entre
             //otras cosas el parametro que nosotros mismos hemos configurado
@@ -22,7 +23,8 @@ var dependencies = {
 
 
             });
-
+            
+            //Obtenemos la ruta absoluta usando el servicio
             self.absolutePathItem = ProductService.photoAbsolutePath;
 
         };

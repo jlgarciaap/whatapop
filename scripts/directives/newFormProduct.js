@@ -1,6 +1,8 @@
 "use strict";
 
 var dependencies = ["CategoryService" ,function () {
+    
+    //Formulario en directiva para trabajar con el comunicandonos tambien con el componente
     return{
 
         restrict: "EA", //Como element y Atributo
@@ -30,6 +32,7 @@ var dependencies = ["CategoryService" ,function () {
             };
 
             scope.notifyNewProduct = function () {
+                
 
 
                 scope.clickToAccept({ anuncio: scope.anuncio});  //Pasamos con el clickToAccept hacia fuera el anuncio completo
@@ -37,7 +40,8 @@ var dependencies = ["CategoryService" ,function () {
             };
 
             scope.canSave = function () {
-
+                
+                //Ponemos unos flags para prevenir el guardado sin datos
                 return scope.anuncio.name && scope.anuncio.price > 0 && scope.anuncio.description && scope.anuncio.category.name;
 
             };

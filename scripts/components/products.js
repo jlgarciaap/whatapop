@@ -21,6 +21,9 @@ var dependencies = {
                 self.products = response.data;
 
             });
+            
+            //Obtenemos la posicion del usuario usando el servicio que hemos creado
+            //y pasamos la posicion a la vista
 
             PositionService.getUserPosition(function (response) {
 
@@ -28,6 +31,8 @@ var dependencies = {
 
 
             });
+            
+            //Obtenemos todos los usuarios que tenemos y los pasamos a la vista
 
             UserService.getUsers().then(function (response) {
 

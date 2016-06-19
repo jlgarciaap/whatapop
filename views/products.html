@@ -11,19 +11,19 @@
             filterPosition: $ctrl.users:$ctrl.actualPosition:distSelected ">
 
                 <div class="thumbnail" ng-link="['ItemDetails',{id: product.id}]">
-                    <img  ng-link="['ItemDetails',{id: product.id}]" ng-src={{$ctrl.absolutePath(product.photos)}} alt="">
+                    <img  ng-link="['ItemDetails',{id: product.id}]" ng-src={{::$ctrl.absolutePath(product.photos)}} alt="">
                     <div class="caption">
                         <!--<h4><a >{{product.name}}</a>-->
-                            <h4><a ng-link="['ItemDetails',{id: product.id}]">{{product.name}}</a></h4>
+                            <h4><a ng-link="['ItemDetails',{id: product.id}]">{{::product.name}}</a></h4>
                             <!-- COn este ng-link llamamos al router del router al componente y le pasamos parametros de ruta con ese JSON-->
 
-                        <h4>{{product.price}}€</h4>
-                        <p class="textoDeMas" ng-bind-html="product.description | sanitize"></p>
+                        <h4>{{::product.price}}€</h4>
+                        <p class="textoDeMas" ng-bind-html="::product.description | sanitize"></p>
                     </div>
                     <div class="ratings">
-                        <p class="pull-right">{{product.state}}</p>
-                        <p>Alta: {{$ctrl.dateLocale(product.published_date) | date: "d/M/yy"}}</p>
-                           {{product.category.name}}
+                        <p class="pull-right">{{::product.state}}</p>
+                        <p>Alta: {{::$ctrl.dateLocale(product.published_date) | date: "d/M/yy"}}</p>
+                           {{::product.category.name}}
                         </p>
                     </div>
                 </div>

@@ -70,7 +70,8 @@ angular.module("whatapop").service("ProductService", function ($http, Properties
             : undefined;
 
     };
-
+    
+    //Obtenemos la fecha 
     this.getDateLocale = function (dateRecieve) {
 
         return new Date(dateRecieve);

@@ -12,6 +12,7 @@ var dependencies = {
         var self = this;
         var imageProduct;
 
+        //Pasamos la imagen que recibimos a la vista
         self.imageSelected = function(imageRecieve) {
             imageProduct = imageRecieve;
         };
@@ -21,6 +22,7 @@ var dependencies = {
         };
 
 
+        //Guardamos el producto con los datos del producto y la imagen recibida
         self.saveProduct = function (savingProduct) {
 
             ProductService.saveProductRecieve(savingProduct, imageProduct).then(function () {
