@@ -1,6 +1,7 @@
 "use strict";
 
 
+
 angular.module("whatapop").service("ProductService", function ($http, Properties) {
 
     this.getProducts = function () {
@@ -21,26 +22,26 @@ angular.module("whatapop").service("ProductService", function ($http, Properties
     };
 
     this.saveProductRecieve = function (productRecieve, imageData) {
-        
+
         var response;
-        
+
         if(imageData){
-            
+
             var data = new FormData();
             data.append("photo", imageData);
-            
+
             //Modificamos content-type para que angular haga
             //un poco de magia
             var config = {
-                
+
                 "headers":{
-                    
+
                     "Content-Type": undefined
-                    
+
                 }
-                
+
             };
-            
+
             response = $http.post(Properties.serverUrl + Properties.endpointImages, data, config)
                 .then(function (responseData) {
                     var relativePath = responseData.data.path;
@@ -69,10 +70,10 @@ angular.module("whatapop").service("ProductService", function ($http, Properties
             : undefined;
 
     };
-    
+
     this.getDateLocale = function (dateRecieve) {
-        
+
         return new Date(dateRecieve);
-        
+
     };
 });

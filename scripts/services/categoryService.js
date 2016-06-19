@@ -5,9 +5,9 @@ angular.module("whatapop").service("CategoryService", function ($http) {
         
     this.getCategories = function () {
 
-        var respuesta = $http.get("http://localhost:8000/api/categories");
+        var response = $http.get("http://localhost:8000/api/categories");
         
         
-        return respuesta;
+        return response;
     };
 });

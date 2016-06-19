@@ -5,8 +5,8 @@ angular.module("whatapop").component("routerRoot", {
     $routeConfig: [
         {
             name: "Anuncios",
-            path: "/anuncios",
-            component: "anuncios",
+            path: "/products",
+            component: "products",
             useAsDefault: true
             
         },
@@ -14,19 +14,13 @@ angular.module("whatapop").component("routerRoot", {
         {
             name: "NuevoAnuncio",
             path: "/new",
-            component: "nuevoAnuncio"   
+            component: "newProduct"
             
         },
 
         {
-         name: "LoginForm",
-            path: "login",
-            component: "loginForm"
-            
-        },
-        {
             name: "ItemDetails",
-            path: "/anuncios/:id",
+            path: "/products/:id",
             component: "itemDetails"
             
             

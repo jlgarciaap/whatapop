@@ -1,17 +1,32 @@
 <div class="list-group">
-    <label for="filtroAnuncios" class="list-group-item active">Busca si eso</label>
-    <input style="padding: 20px" id="filtroAnuncios" type="text" placeholder="Ej. Call of Duty" class="form-control" ng-model="productFilter.name">
-    <div style="text-align: center">
-        <label class="radio-inline">
-            <input type="radio" name="categorias" ng-model="categoria.category.name" value="Videojuegos">Videojuegos</label>
-        <label class="radio-inline">
-            <input type="radio" name="categorias" ng-model="categoria.category.name" value="Películas">Peliculas</label>
-        <label class="radio-inline">
-            <input type="radio" name="categorias" ng-model="categoria.category.name" value="Libros">Libros</label>
-        <label class="radio-inline">
-            <input type="radio" name="categorias" ng-model="categoria.category.name" value="">Todos</label>
+    <label for="productsFilter" class="list-group-item active">Busca si eso</label>
+    <input style="padding: 20px" id="productsFilter" type="text" placeholder="Ej. Call of Duty" class="form-control" ng-model="productFilter.name">
+
+    <div class="panel panel-primary">
+        <label for="distFilter" class="panel-heading">Distancia</label>
+        <div style="text-align: center" class="panel-body" id="distFilter">
+            <label class="radio-inline">
+                <input type="radio"  name="distance" ng-model="distSelected" value=1000000000 ng-checked="!distSelected">Sin Limite</label>
+            <label class="radio-inline">
+                <input type="radio" name="distance" ng-model="distSelected" value=5000>5 Km</label>
+            <label class="radio-inline">
+                <input type="radio" name="distance" ng-model="distSelected" value=10000>10 Km</label>
+            <label class="radio-inline">
+                <input type="radio" name="distance" ng-model="distSelected" value=15000>15 Km</label>
+        </div>
+        </div>
+    <div class="panel panel-primary">
+        <label class="panel-heading">Distancia</label>
+        <div style="text-align: center" class="panel-body">
+            <label class="radio-inline">
+                <input  type="radio" name="categories" ng-model="categoria.category.name" value="Videojuegos">Videojuegos</label>
+            <label class="radio-inline">
+                <input type="radio" name="categories" ng-model="categoria.category.name" value="Películas">Peliculas</label>
+            <label class="radio-inline">
+                <input type="radio" name="categories" ng-model="categoria.category.name" value="Libros">Libros</label>
+            <label class="radio-inline">
+                <input type="radio" name="categories" ng-model="categoria.category.name" value="" ng-checked="!categoria">Todos</label>
+        </div>
     </div>
-
-
     </div>
 </div>

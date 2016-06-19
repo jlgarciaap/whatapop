@@ -2,14 +2,12 @@
 
 //Setter de la app
 //Inject de NGComponentRouter obligatorio para las comunicaciones
-angular.module("whatapop", ["ngComponentRouter","dahr.ng-image-picker"]);
+angular.module("whatapop", ["ngComponentRouter","dahr.ng-image-picker", "dahr.ng-haversine" ]);
 
 //Indicamos el modo HTML5 para SPA
 angular.module("whatapop").config(function ($locationProvider) {
     
     $locationProvider.html5Mode(true);
-    
-    
     
 });
 

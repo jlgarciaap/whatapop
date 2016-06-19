@@ -13,13 +13,28 @@
         <div class="">
             <p class="lead" style="text-align: center">{{$ctrl.product.name}}</p>
             <div class="list-group">
-                <label class="list-group-item">Precio</label>
-                <p>{{$ctrl.product.price}}€</p>
-                <label class="list-group-item">Detalles</label>
-                <p ng-bind-html="$ctrl.product.description | sanitize"></p>
+                <div class="panel panel-primary">
+                    <label class="panel-heading" style="text-align: center">Precio</label>
+                    <p class="panel-body" style="text-align: center">{{$ctrl.product.price}}€</p>
+                </div>
+                <div class="panel panel-primary">
+                    <label class="panel-heading" style="text-align: center">Detalles</label>
+                    <p  class="panel-body" ng-bind-html="$ctrl.product.description | sanitize"></p>
+                </div>
+                <div class="panel panel-primary">
+                    <label class="panel-heading" style="text-align: center">Anuncio creado por</label>
+                    <div class="panel-body">
+                        <div class="media">
+                            <a class="pull-left">
+                            <img class="media-object" ng-src="{{$ctrl.absolutePathItem($ctrl.product.seller.avatar)}}" style="width: 64px;height: 64px;">
+                            </a>
+                            <div class="media-body">
+                                <h4>{{$ctrl.product.seller.nick}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
-
 </div>
