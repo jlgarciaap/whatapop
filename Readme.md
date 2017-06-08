@@ -1,6 +1,6 @@
 <h1>Whatapop</h1>
 
-Aplicacion de anuncios al estilo wallapop.
+Aplicacion de anuncios al estilo wallapop, hecha con AngularJS
 
 Para poder usar la aplicación lo primero es usar **npm install** lo que instalaria los módulos necesarios.
 Como tal usamos **lite-server** y **node-sparrest** para ejecutar la aplicacion de forma local.
